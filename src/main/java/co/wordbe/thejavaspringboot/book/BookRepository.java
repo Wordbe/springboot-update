@@ -1,4 +1,4 @@
-package co.wordbe.thejavaspringboot;
+package co.wordbe.thejavaspringboot.book;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

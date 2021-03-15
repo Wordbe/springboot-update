@@ -1,5 +1,8 @@
 package co.wordbe.thejavaspringboot;
 
+import co.wordbe.thejavaspringboot.book.Book;
+import co.wordbe.thejavaspringboot.book.BookRepository;
+import co.wordbe.thejavaspringboot.book.BookService;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.ArgumentMatchers.any;

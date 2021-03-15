@@ -1,4 +1,4 @@
-package co.wordbe.thejavaspringboot;
+package co.wordbe.thejavaspringboot.book;
 
 public class BookService {
 
