@@ -12,8 +12,8 @@ public class PostService {
         System.out.println("(post) thread: " + Thread.currentThread().getName());
     }
 
-    @Scheduled(fixedDelay = 1000 * 2)
-    public void printHi() {
-        System.out.println("(hi) thread: " + Thread.currentThread().getName());
-    }
+//    @Scheduled(fixedDelay = 1000 * 2)
+//    public void printHi() {
+//        System.out.println("(hi) thread: " + Thread.currentThread().getName());
+//    }
 }
