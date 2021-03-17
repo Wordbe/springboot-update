@@ -9,14 +9,11 @@ import org.springframework.stereotype.Component;
     public class PostAppRunner implements ApplicationRunner {
 
         @Autowired
-        PostConfig postConfig;
+        AppleProperties appleProperties;
 
         @Override
         public void run(ApplicationArguments args) throws Exception {
-            System.out.println(postConfig.postObject());
-            System.out.println(postConfig.postObject());
-            System.out.println(postConfig.postObject());
-            System.out.println(postConfig.postObject());
-            System.out.println(postConfig.postObject());
+            System.out.println(appleProperties.getCount());
+            System.out.println(appleProperties.getName());
         }
     }
