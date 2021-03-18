@@ -5,14 +5,14 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Profile("localController")
+@Profile("devController")
 @RestController
-public class LocalController {
+public class DevController {
 
     @Autowired
     MyService myService;
 
-    @GetMapping("/local")
+    @GetMapping("/dev")
     public String hello() {
         return myService.getMessage();
     }
