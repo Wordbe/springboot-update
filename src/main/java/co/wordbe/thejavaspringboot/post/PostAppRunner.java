@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
         @Override
         public void run(ApplicationArguments args) throws Exception {
-            System.out.println(appleProperties.getCount());
-            System.out.println(appleProperties.getName());
+//            System.out.println(appleProperties.getCount());
+//            System.out.println(appleProperties.getName());
         }
     }

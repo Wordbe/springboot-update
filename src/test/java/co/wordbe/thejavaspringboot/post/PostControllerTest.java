@@ -9,7 +9,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -23,7 +22,6 @@ class PostControllerTest {
     void testPostLambda() throws Exception {
         ResultActions resultActions = mockMvc.perform(get("/post"));
         Assertions.assertAll(
-                () -> resultActions.andExpect(status().isOk()),
-                () -> resultActions.andExpect(content().string("hello")));
+                () -> resultActions.andExpect(status().isOk()));
     }
 }
