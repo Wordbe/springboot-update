@@ -12,23 +12,33 @@ spec:
       labels:
         app: app-demo
     spec:
+      volumes:
+        - name: k8s-configmap-volume
+          configMap:
+            name: k8s-configmap
+
       containers:
         - name: app-demo
           image: the-java-springboot:0.0.1-SNAPSHOT
+          volumeMounts:
+            - mountPath: /etc/config
+              name: k8s-configmap-volume
           ports:
             - containerPort: 8080
+
           livenessProbe:
             httpGet:
               port: 8080
               path: /actuator/health/liveness
-            initialDelaySeconds: 10
+            initialDelaySeconds: 15
             periodSeconds: 3
             failureThreshold: 2
+
           readinessProbe:
             httpGet:
               port: 8080
               path: /actuator/health/readiness
-            initialDelaySeconds: 10
+            initialDelaySeconds: 15
             periodSeconds: 3
 ---
 apiVersion: v1
@@ -42,15 +52,11 @@ spec:
   ports:
     - port: 8080
       targetPort: 8080
-#---
-#spec:
-#  volumes:
-#    - name: k8s-configmap-volume
-#      configMap:
-#        name: k8s-configmap
-#  containers:
-#      - name: app-demo
-#        image: demo-springboot23:0.0.1-SNAPSHOT
-#        volumeMounts:
-#          - mountPath: /etc/config
-#            name: k8s-configmap-volume
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k8s-configmap
+data:
+  application.properties: |
+    service.message: hello kubernetes
